@@ -23,16 +23,17 @@
             background-color: #111b21;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: center; /* Align items vertically centered by default */
             flex-direction: column;
             height: 100vh;
             margin: 0;
             color: #ffffff;
-            overflow: hidden;
+            overflow: hidden; /* Hide overflow on body */
         }
         .wrapper {
             display: flex;
             align-items: flex-start;
+            gap: 20px; /* Space between elements */
         }
         .intro-text {
             margin-right: 20px;
@@ -46,7 +47,7 @@
             text-decoration: none; /* Remove underline */
         }
         .intro-text .large-text {
-            font-size: 30px; /* Adjust the size as needed */
+            font-size: 40px; /* Adjust the size as needed */
             font-family: 'HelveticaBlack'; /* Apply Helvetica Black font */
         }
         .intro-text .fade-in-text {
@@ -60,6 +61,7 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             text-align: left;
             position: relative;
+            margin-top: 20px; /* Add space above the container */
         }
         .container h1 {
             color: #25D366;
@@ -106,12 +108,14 @@
             margin-top: 10px;
             font-size: 12px;
             color: #aaaaaa;
+            text-align: center; /* Center the footer text */
         }
         .policy-link {
             display: block;
-            margin-top: 10px;
+            margin: 20px auto 0; /* Center and space out the policy link */
             color: #25D366;
             text-decoration: none;
+            text-align: center; /* Ensure text inside link is centered */
         }
         .policy-link:hover {
             text-decoration: underline;
@@ -121,43 +125,74 @@
             width: 100%;
             text-align: center;
         }
+
+        /* Media Queries */
+        @media (max-width: 600px) {
+            body {
+                align-items: flex-start; /* Align items to the top for scrolling effect */
+                padding-top: 20px; /* Add padding to the top */
+            }
+            .wrapper {
+                flex-direction: column; /* Stack elements vertically on smartphones */
+                gap: 20px; /* Space between elements */
+            }
+            .container {
+                margin: 0 auto; /* Center the container */
+                width: 90%; /* Adjust width to fit within screen */
+            }
+            .intro-text {
+                text-align: left; /* Align text to the left on smartphones */
+                padding-left: 20px; /* Add left padding to the text */
+            }
+            .content {
+                height: auto; /* Allow content height to adjust for scrolling */
+                overflow-y: auto; /* Allow vertical scrolling */
+                padding-bottom: 80px; /* Ensure space for ads at the bottom */
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="wrapper">
-        <div class="intro-text">
-            <p><span class="large-text">Tired of saving<br>too many contacts<br>just to send<br>a message<br>to someone?</span><br><span class="highlight">Now you can send messages on WhatsApp<br>without saving them to your contacts!</span> <span class="fade-in-text">Try it now.</span></p>
-        </div>
-
-        <div class="container">
-            <h1>Chat via WhatsApp</h1>
-            <div class="input-group">
-                <input type="text" id="phoneNumber" placeholder="Enter phone number">
-                <div class="note">Please input with country code, like +62 XXXXXXX</div>
-                <input type="text" id="messageText" placeholder="Enter optional message">
+    <div class="content">
+        <div class="wrapper">
+            <div class="intro-text">
+                <p><span class="large-text">Tired of saving<br>too many contacts<br>just to send<br>a message<br>to someone?</span><br><span class="highlight">Now you can send messages on WhatsApp<br>without saving them to your contacts!</span> <span class="fade-in-text">Try it now.</span></p>
             </div>
-            <a id="whatsappLink" aria-label="Chat on WhatsApp" href="#">
-                <img alt="Chat on WhatsApp" src="WhatsAppButtonGreenLarge.svg" />
-            </a>
-            <a href="privacy-policy.html" class="policy-link">Privacy and Policy</a>
-            <div class="footer" id="footerText"></div>
-        </div>
-    </div>
 
-    <!-- Advertisement section -->
-    <div class="ad-container">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6841872043484444" crossorigin="anonymous"></script>
-        <!-- Example ad unit -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-6841872043484444"
-             data-ad-slot="1234567890"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+            <div class="container">
+                <h1>Chat via WhatsApp</h1>
+                <div class="input-group">
+                    <input type="text" id="phoneNumber" placeholder="Enter phone number">
+                    <div class="note">Please input with country code, like +62 XXXXXXX</div>
+                    <input type="text" id="messageText" placeholder="Enter optional message">
+                </div>
+                <a id="whatsappLink" aria-label="Chat on WhatsApp" href="#">
+                    <img alt="Chat on WhatsApp" src="WhatsAppButtonGreenLarge.svg" />
+                </a>
+            </div>
+        </div>
+
+        <!-- Advertisement section -->
+        <div class="ad-container">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6841872043484444" crossorigin="anonymous"></script>
+            <!-- Example ad unit -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6841872043484444"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- Privacy and Policy link for mobile -->
+        <a href="privacy-policy.html" class="policy-link">Privacy and Policy</a>
+
+        <!-- Footer -->
+        <div class="footer" id="footerText"></div>
     </div>
 
     <script>
