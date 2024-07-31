@@ -198,7 +198,7 @@
     <script>
         // Set footer text with current year
         const currentYear = new Date().getFullYear();
-        document.getElementById('footerText').textContent = `© ${currentYear} DirectWAapp - Made by Ridzwanirawan`;
+        document.getElementById('footerText').innerHTML = `© ${currentYear} DirectWAapp - Made by <a href="https://www.instagram.com/ridzstoic" style="color: #25D366; text-decoration: none;">Ridzstoic</a>`;
 
         document.getElementById('whatsappLink').addEventListener('click', function(event) {
             event.preventDefault();
